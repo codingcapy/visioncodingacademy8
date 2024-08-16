@@ -29,6 +29,7 @@ import { TfiEmail } from "react-icons/tfi";
 import { FaWhatsapp } from "react-icons/fa";
 import { IoEyeOutline } from "react-icons/io5";
 import { TbTargetArrow } from "react-icons/tb";
+import FloatingNav from '../components/FloatingNav';
 
 export default function HomePage() {
 
@@ -127,6 +128,38 @@ export default function HomePage() {
                     <h2 className="timeline-content js--fadeInBottom text-4xl pb-4 text-yellow-200">
                         Who we are
                     </h2>
+                    <div className="md:grid grid-cols-3 py-5">
+                        <iframe
+                            width="300"
+                            height="315"
+                            src="https://www.youtube.com/embed/Y4I_PPDyyMI"
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            className="js--fadeInRight border-4 rounded-2xl border-gray-800 mb-10 md:mb-0 md:w-[400px]"
+                        ></iframe>
+                        <iframe
+                            width="300"
+                            height="315"
+                            src="https://www.youtube.com/embed/VnBJe2vxJjA"
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            className="js--fadeInRight border-4 rounded-2xl border-gray-800 mb-10 md:mb-0 md:mx-2 md:w-[400px]"
+                        ></iframe>
+                        <iframe
+                            width="300"
+                            height="315"
+                            src="https://www.youtube.com/embed/GrfhatH_YjU?start=88"
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            className="js--fadeInRight border-4 rounded-2xl border-gray-800 my-2 md:my-0 md:w-[400px]"
+                        ></iframe>
+                    </div>
                     <p className="timeline-content js--fadeInBottom pb-2 text-lg md:text-2xl md:py-5">Welcome to Vision
                         Coding
                         Academy,
@@ -484,6 +517,7 @@ export default function HomePage() {
                     </div>
                 </section>
             </div>
+            <FloatingNav />
         </main>
     )
 }

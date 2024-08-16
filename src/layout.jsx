@@ -23,7 +23,6 @@ export default function Layout() {
             <ScrollToTop />
             <Header />
             <Outlet />
-            <FloatingNav />
             <Footer />
             {showPopup && <section id='pop-up'>
                 <div id='pop-up-div' className="border-2 border-yellow-300">

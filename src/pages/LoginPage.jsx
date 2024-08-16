@@ -51,7 +51,7 @@ export default function LoginPage() {
                     <p className="text-center md:text-lg">as a member of <span className="text-yellow-200">Vision Coding
                         Academy</span></p>
                 </section>
-                <section className="py-10 md:pl-20 mx-auto">
+                <section className="py-10 mx-auto">
                     <form onSubmit={handleLogin} className="flex flex-col mx-auto">
                         <div className="flex flex-col">
                             <label htmlFor="title">Email</label>

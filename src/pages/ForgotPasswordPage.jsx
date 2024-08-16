@@ -51,7 +51,7 @@ export default function ForgotPasswordPage(){
                         <button className="px-3 py-3 my-7 border-4 rounded border-yellow-300 text-yellow-300 font-bold md:text-2xl hover:bg-yellow-300 hover:text-black transition-all ease duration-500">Send</button>
                     </form>}
                     <p className="text-center py-2">{message}</p>
-                    {emailSent && <div className="px-3 py-3 my-7 border-4 rounded border-yellow-300 text-yellow-300 font-bold md:text-2xl hover:bg-yellow-300 hover:text-black transition-all ease duration-500">
+                    {emailSent && <div className="px-3 py-3 my-7 border-4 rounded border-yellow-300 text-yellow-300 font-bold md:text-2xl hover:bg-yellow-300 hover:text-black transition-all ease duration-500 text-center">
                         <NavLink to="/login">Login</NavLink>
                     </div>}
                     <div>Returning User? <NavLink to="/login" className="text-center text-yellow-200">Login</NavLink></div>

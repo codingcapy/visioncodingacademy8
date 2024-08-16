@@ -18,6 +18,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import DOMAIN from '../services/endpoint';
+import visionCodingIcon from "/yellow1.png"
 
 export default function ContactPage() {
 
@@ -221,7 +222,7 @@ export default function ContactPage() {
                     </section>
                     <section className="mx-auto">
                         <form onSubmit={handleSubmit} className="flex flex-col mx-auto">
-                            <h1 className="text-center text-4xl py-10">Questions?</h1>
+                            <h1 className="text-center text-4xl py-10 text-yellow-200">Questions?</h1>
                             <div className="flex flex-col">
                                 <label htmlFor="title">First Name</label>
                                 <input type="text" name='firstname' id='firstname' placeholder="First Name" required
@@ -242,10 +243,17 @@ export default function ContactPage() {
                                 <textarea type="text" name='content' id='content' placeholder='Message' required rows="10"
                                     cols="40" value={contentInput} className="px-2 border rounded-lg border-slate-700 py-1 w-[300px] text-black" onChange={(e) => setContentInput(e.target.value)} />
                             </div>
-                            <button className="rounded-xl my-5 py-2 px-2 bg-slate-700 text-white mx-auto">Submit</button>
+                            <button className="px-3 py-3 my-7 border-4 rounded border-yellow-300 text-yellow-300 font-bold md:text-2xl hover:bg-yellow-300 hover:text-black transition-all ease duration-500">Submit</button>
                         </form>
                     </section>
                     <p className='text-center'>{notification}</p>
+                    <div className="mt-20">
+                        <div
+                            className="static bg-gradient-to-r from-black via-yellow-400 to-black h-[2px]">
+                        </div>
+                        <img src={visionCodingIcon} alt=""
+                            className="relative bottom-[45px] md:bottom-[60px] left-[40%] md:left-[48%] w-[75px] md:w-[100px] bg-black" />
+                    </div>
                     <section className="md:flex mx-auto py-10 w-[100%]">
                         <div className="mx-2 w-[100%]">
                             <h1 className="text-2xl py-2">Coquitlam Location</h1>

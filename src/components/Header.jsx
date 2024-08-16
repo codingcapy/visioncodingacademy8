@@ -86,7 +86,7 @@ export default function Header() {
                     </li>}
                     {user && <li
                         className="px-5 py-2 text-center md:hidden rounded-md transition ease-in-out duration-300  md:text-2xl">
-                        <NavLink to="/" onClick={() => window.innerWidth < 700 && setNavVisible(false)}>{user.username}</NavLink>
+                        <NavLink to="/user" onClick={() => window.innerWidth < 700 && setNavVisible(false)}>{user.username}</NavLink>
                     </li>}
                     {user && <li onClick={logoutService}
                         className="px-5 py-2 text-center md:hidden rounded-md transition ease-in-out duration-300  md:text-2xl">
@@ -105,7 +105,7 @@ export default function Header() {
                 </NavLink>
             </div>}
             {user && <div className="flex">
-                <NavLink to="/login"
+                <NavLink to="/user"
                     className="nav-element hidden px-5 py-2 md:py-5 text-center md:block rounded-md transition ease-in-out duration-300 md:text-2xl">
                     {user?.username}
                 </NavLink>
