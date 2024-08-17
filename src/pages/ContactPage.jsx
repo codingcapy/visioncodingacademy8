@@ -8,7 +8,7 @@ description: Contact page for Vision Coding Academy
 
 import $ from 'jquery';
 import ScrollReveal from 'scrollreveal';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { LuMapPin } from "react-icons/lu";
 import { FaInstagram } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
@@ -19,6 +19,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import DOMAIN from '../services/endpoint';
 import visionCodingIcon from "/yellow1.png"
+import ReCAPTCHA from "react-google-recaptcha"
 
 export default function ContactPage() {
 
@@ -27,6 +28,7 @@ export default function ContactPage() {
     const [lNameInput, setLNameInput] = useState("")
     const [contactInput, setContactInput] = useState("")
     const [contentInput, setContentInput] = useState("")
+    const captchaRef = useRef(null)
 
     useEffect(() => {
         document.title = 'Contact | Vision Coding';
@@ -150,11 +152,14 @@ export default function ContactPage() {
 
     async function handleSubmit(e) {
         e.preventDefault();
+        const token = captchaRef.current.getValue();
+        captchaRef.current.reset();
+        if (!token) return setNotification("Please confirm that you are human!")
         const first_name = e.target.firstname.value;
         const last_name = e.target.lastname.value;
         const contact = e.target.contact.value;
         const content = e.target.content.value;
-        const newQuestion = { first_name, last_name, contact, content }
+        const newQuestion = { first_name, last_name, contact, content, token }
         try {
             const res = await axios.post(`${DOMAIN}/api/questions`, newQuestion);
             if (res?.data.success) {
@@ -243,6 +248,7 @@ export default function ContactPage() {
                                 <textarea type="text" name='content' id='content' placeholder='Message' required rows="10"
                                     cols="40" value={contentInput} className="px-2 border rounded-lg border-slate-700 py-1 w-[300px] text-black" onChange={(e) => setContentInput(e.target.value)} />
                             </div>
+                            <ReCAPTCHA sitekey="6Lc6lSgqAAAAAGuz6cbWxpmEjkgaTRT_8v1sXkEQ" ref={captchaRef}/>
                             <button className="px-3 py-3 my-7 border-4 rounded border-yellow-300 text-yellow-300 font-bold md:text-2xl hover:bg-yellow-300 hover:text-black transition-all ease duration-500">Submit</button>
                         </form>
                     </section>

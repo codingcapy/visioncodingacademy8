@@ -6,15 +6,17 @@ version: 1.0
 description: Signup page for Vision Coding Academy
  */
 
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { NavLink, useNavigate } from "react-router-dom";
 import DOMAIN from "../services/endpoint";
 import axios from "axios";
+import ReCAPTCHA from "react-google-recaptcha"
 
 export default function SignupPage() {
 
     const navigate = useNavigate();
     const [notification, setNotification] = useState("")
+    const captchaRef = useRef(null)
 
     useEffect(() => {
         document.title = 'Signup | Vision Coding';
@@ -22,15 +24,18 @@ export default function SignupPage() {
 
     async function handleSubmit(e) {
         e.preventDefault();
+        const token = captchaRef.current.getValue();
+        captchaRef.current.reset();
+        if (!token) return setNotification("Please confirm that you are human!")
         try {
             const email = e.target.email.value;
             const username = e.target.username.value;
             const password = e.target.password.value;
             const confirm = e.target.confirm.value;
-            if (password != confirm){
+            if (password != confirm) {
                 return setNotification("passwords don't match!")
             }
-            const new_user = {email, username, password}
+            const new_user = { email, username, password, token }
             const res = await axios.post(`${DOMAIN}/api/users`, new_user)
             if (res?.data?.success) {
                 setNotification("success! Redirecting...")
@@ -81,6 +86,7 @@ export default function SignupPage() {
                             <input type="password" name='confirm' id='confirm' placeholder='Confirm Password' required
                                 rows="10" cols="40" className="px-2 border rounded-lg border-slate-700 py-1 w-[300px] text-black" />
                         </div>
+                        <ReCAPTCHA sitekey="6Lc6lSgqAAAAAGuz6cbWxpmEjkgaTRT_8v1sXkEQ" ref={captchaRef} />
                         <button
                             className="px-3 py-3 my-7 border-4 rounded border-yellow-300 text-yellow-300 font-bold md:text-2xl hover:bg-yellow-300 hover:text-black transition-all ease duration-500">Sign
                             Up</button>
