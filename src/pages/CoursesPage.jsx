@@ -26,6 +26,7 @@ import devops from "/devops.jpg"
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export default function CoursesPage() {
 
@@ -119,8 +120,8 @@ export default function CoursesPage() {
                                     borderWidth: '2px',
                                     borderStyle: 'solid',
                                 }} className="timeline-content js--fadeInRight">
-                                    <AccordionSummary id="panel-header" aria-controls="panel-content" className="text-2xl font-bold py-2 text-yellow-200">
-                                        <img src={icon7} alt="course1" className="w-[100px] py-6 md:py-0 bg-black text-white" />
+                                    <AccordionSummary id="panel-header" aria-controls="panel-content" expandIcon={<ExpandMoreIcon fontSize="large" style={{ color: 'rgb(254 240 138)' }} />} className="text-2xl font-bold py-2 text-yellow-200">
+                                        <img src={icon7} alt="course1" className="w-[100px] py-6 md:py-4 bg-black text-white" />
                                         <h2 className="text-2xl font-bold py-10 pl-10 text-yellow-200">PYTHON BEGINNER</h2>
                                     </AccordionSummary>
                                     <AccordionDetails className=''>
@@ -145,9 +146,9 @@ export default function CoursesPage() {
                                     borderWidth: '2px',
                                     borderStyle: 'solid',
                                 }} className="timeline-content js--fadeInRight rounded-4xl rounded-3xl border-2 border-yellow-200 mb-10">
-                                    <AccordionSummary id="panel-header" aria-controls="panel-content" className="text-2xl font-bold py-2 text-yellow-200">
-                                        <img src={icon7} alt="course1" className="w-[100px] py-6 md:py-0 bg-black text-white" />
-                                        <h2 className="text-2xl font-bold py-10 px-5 md:pl-10 text-yellow-200">PYTHON INTERMEDIATE</h2>
+                                    <AccordionSummary id="panel-header" aria-controls="panel-content" expandIcon={<ExpandMoreIcon fontSize="large" style={{ color: 'rgb(254 240 138)' }} />} className="text-2xl font-bold py-2 text-yellow-200">
+                                        <img src={icon7} alt="course1" className="w-[100px] py-6 bg-black text-white" />
+                                        <h2 className="text-[20px] md:text-2xl font-bold py-10 px-5 md:pl-10 text-yellow-200">PYTHON INTERMEDIATE</h2>
                                     </AccordionSummary>
                                     <AccordionDetails className=''>
                                         <h3 className="text-2xl font-bold py-2">Programming Language</h3>
@@ -171,9 +172,9 @@ export default function CoursesPage() {
                                     borderWidth: '2px',
                                     borderStyle: 'solid',
                                 }} className="timeline-content js--fadeInRight">
-                                    <AccordionSummary id="panel-header" aria-controls="panel-content" className="text-2xl font-bold py-2 text-yellow-200">
+                                    <AccordionSummary id="panel-header" aria-controls="panel-content" expandIcon={<ExpandMoreIcon fontSize="large" style={{ color: 'rgb(254 240 138)' }} />} className="text-2xl font-bold py-2 text-yellow-200">
                                         <img src={icon39} alt="course1" className="w-[100px] py-6 md:py-0 bg-black text-white" />
-                                        <h2 className="text-2xl font-bold py-10 px-5 md:pl-10 text-yellow-200">WEB DEVELOPMENT</h2>
+                                        <h2 className="text-[20px] md:text-2xl font-bold py-10 px-5 md:pl-10 text-yellow-200">WEB DEVELOPMENT</h2>
                                     </AccordionSummary>
                                     <AccordionDetails className=''>
                                         <h3 className="text-2xl font-bold py-2">HTML, CSS and JavaScript</h3>
@@ -197,9 +198,9 @@ export default function CoursesPage() {
                                     borderWidth: '2px',
                                     borderStyle: 'solid',
                                 }} className="timeline-content js--fadeInRight">
-                                    <AccordionSummary id="panel-header" aria-controls="panel-content" className="text-2xl font-bold py-2 text-yellow-200">
+                                    <AccordionSummary id="panel-header" aria-controls="panel-content" expandIcon={<ExpandMoreIcon fontSize="large" style={{ color: 'rgb(254 240 138)' }} />} className="text-2xl font-bold py-2 text-yellow-200">
                                         <img src={icon39} alt="course1" className="w-[100px] py-6 md:py-0 bg-black text-white" />
-                                        <h2 className="text-2xl font-bold py-10 px-5 md:pl-10 text-yellow-200">WEB DEVELOPMENT 2</h2>
+                                        <h2 className="text-[20px] md:text-2xl font-bold py-10 px-5 md:pl-10 text-yellow-200">WEB DEVELOPMENT 2</h2>
                                     </AccordionSummary>
                                     <AccordionDetails className=''>
                                         <h3 className="text-2xl font-bold py-2">React and Node.js</h3>
@@ -222,8 +223,8 @@ export default function CoursesPage() {
                                     borderWidth: '2px',
                                     borderStyle: 'solid',
                                 }} className="timeline-content js--fadeInRight">
-                                    <AccordionSummary id="panel-header" aria-controls="panel-content" className="text-2xl font-bold py-2 text-yellow-200">
-                                        <img src={icon69} alt="course1" className="w-[100px] py-6 md:py-0 bg-black text-white" />
+                                    <AccordionSummary id="panel-header" aria-controls="panel-content" expandIcon={<ExpandMoreIcon fontSize="large" style={{ color: 'rgb(254 240 138)' }} />} className="text-2xl font-bold py-2 text-yellow-200">
+                                        <img src={icon69} alt="course1" className="w-[100px] bg-black text-white" />
                                         <h2 className="text-2xl font-bold py-10 px-5 md:pl-10 text-yellow-200">C#</h2>
                                     </AccordionSummary>
                                     <AccordionDetails className=''>
@@ -247,7 +248,7 @@ export default function CoursesPage() {
                                     borderWidth: '2px',
                                     borderStyle: 'solid',
                                 }} className="timeline-content js--fadeInRight">
-                                    <AccordionSummary id="panel-header" aria-controls="panel-content" className="text-2xl font-bold py-2 text-yellow-200">
+                                    <AccordionSummary id="panel-header" aria-controls="panel-content" expandIcon={<ExpandMoreIcon fontSize="large" style={{ color: 'rgb(254 240 138)' }} />} className="text-2xl font-bold py-2 text-yellow-200">
                                         <img src={icon53} alt="course1" className="w-[100px] py-6 md:py-0 bg-black text-white" />
                                         <h2 className="text-2xl font-bold py-10 px-5 md:pl-10 text-yellow-200">ROBLOX VR</h2>
                                     </AccordionSummary>
@@ -273,7 +274,7 @@ export default function CoursesPage() {
                                     borderWidth: '2px',
                                     borderStyle: 'solid',
                                 }} className="timeline-content js--fadeInRight">
-                                    <AccordionSummary id="panel-header" aria-controls="panel-content" className="text-2xl font-bold py-2 text-yellow-200">
+                                    <AccordionSummary id="panel-header" aria-controls="panel-content" expandIcon={<ExpandMoreIcon fontSize="large" style={{ color: 'rgb(254 240 138)' }} />} className="text-2xl font-bold py-2 text-yellow-200">
                                         <img src={icon75} alt="course1" className="w-[100px] py-6 md:py-3 bg-black text-white" />
                                         <h2 className="text-2xl font-bold py-10 px-5 md:pl-10 text-yellow-200">ARDUINO & STEM</h2>
                                     </AccordionSummary>
@@ -299,8 +300,8 @@ export default function CoursesPage() {
                                     borderWidth: '2px',
                                     borderStyle: 'solid',
                                 }} className="timeline-content js--fadeInRight">
-                                    <AccordionSummary id="panel-header" aria-controls="panel-content" className="text-2xl font-bold py-2 text-yellow-200">
-                                        <img src={icon71} alt="course1" className="w-[100px] py-6 md:py-0 bg-black text-white" />
+                                    <AccordionSummary id="panel-header" aria-controls="panel-content" expandIcon={<ExpandMoreIcon fontSize="large" style={{ color: 'rgb(254 240 138)' }} />} className="text-2xl font-bold py-2 text-yellow-200">
+                                        <img src={icon71} alt="course1" className="w-[100px] bg-black text-white" />
                                         <h2 className="text-2xl font-bold py-10 px-5 md:pl-10 text-yellow-200">C</h2>
                                     </AccordionSummary>
                                     <AccordionDetails className=''>
@@ -325,7 +326,7 @@ export default function CoursesPage() {
                                     borderWidth: '2px',
                                     borderStyle: 'solid',
                                 }} className="timeline-content js--fadeInRight">
-                                    <AccordionSummary id="panel-header" aria-controls="panel-content" className="text-2xl font-bold py-2 text-yellow-200">
+                                    <AccordionSummary id="panel-header" aria-controls="panel-content" expandIcon={<ExpandMoreIcon fontSize="large" style={{ color: 'rgb(254 240 138)' }} />} className="text-2xl font-bold py-2 text-yellow-200">
                                         <img src={icon70} alt="course1" className="w-[100px] py-6 md:py-0 bg-black text-white" />
                                         <h2 className="text-2xl font-bold py-10 px-5 md:pl-10 text-yellow-200">C++</h2>
                                     </AccordionSummary>
@@ -352,7 +353,7 @@ export default function CoursesPage() {
                                     borderWidth: '2px',
                                     borderStyle: 'solid',
                                 }} className="timeline-content js--fadeInRight">
-                                    <AccordionSummary id="panel-header" aria-controls="panel-content" className="text-2xl font-bold py-2 text-yellow-200">
+                                    <AccordionSummary id="panel-header" aria-controls="panel-content" expandIcon={<ExpandMoreIcon fontSize="large" style={{ color: 'rgb(254 240 138)' }} />} className="text-2xl font-bold py-2 text-yellow-200">
                                         <img src={icon23} alt="course1" className="w-[100px] py-6 md:py-0 bg-black text-white" />
                                         <h2 className="text-2xl font-bold py-10 px-5 md:pl-10 text-yellow-200">AP CS</h2>
                                     </AccordionSummary>
@@ -378,7 +379,7 @@ export default function CoursesPage() {
                                     borderWidth: '2px',
                                     borderStyle: 'solid',
                                 }} className="timeline-content js--fadeInRight">
-                                    <AccordionSummary id="panel-header" aria-controls="panel-content" className="text-2xl font-bold py-2 text-yellow-200">
+                                    <AccordionSummary id="panel-header" aria-controls="panel-content" expandIcon={<ExpandMoreIcon fontSize="large" style={{ color: 'rgb(254 240 138)' }} />} className="text-2xl font-bold py-2 text-yellow-200">
                                         <img src={icon59} alt="course1" className="w-[100px] py-6 md:py-0 bg-black text-white" />
                                         <h2 className="text-2xl font-bold py-10 px-5 md:pl-10 text-yellow-200">CCC</h2>
                                     </AccordionSummary>
@@ -417,8 +418,8 @@ export default function CoursesPage() {
                                     borderWidth: '2px',
                                     borderStyle: 'solid',
                                 }} className="timeline-content js--fadeInRight rounded-4xl rounded-3xl border-2 border-yellow-200">
-                                    <AccordionSummary id="panel-header" aria-controls="panel-content" className="text-2xl font-bold py-2 text-yellow-200">
-                                        <img src={icon18} alt="course1" className="w-[75px] md:w-[100px] bg-black text-white" />
+                                    <AccordionSummary id="panel-header" aria-controls="panel-content" expandIcon={<ExpandMoreIcon fontSize="large" style={{ color: 'rgb(254 240 138)' }} />} className="text-2xl font-bold py-2 text-yellow-200">
+                                        <img src={icon18} alt="course1" className="w-[75px] md:w-[100px] bg-black text-white py-10 md:py-0" />
                                         <h2 className="text-2xl font-bold py-10 pl-10 text-yellow-200 text-center">TECH INTERVIEW PREP</h2>
                                     </AccordionSummary>
                                     <AccordionDetails className=''>
@@ -442,8 +443,8 @@ export default function CoursesPage() {
                                     borderWidth: '2px',
                                     borderStyle: 'solid',
                                 }} className="timeline-content js--fadeInRight rounded-4xl rounded-3xl border-2 border-yellow-200 mb-10">
-                                    <AccordionSummary id="panel-header" aria-controls="panel-content" className="text-2xl font-bold py-2 text-yellow-200">
-                                        <img src={icon44} alt="course1" className="w-[100px] bg-black text-white py-2" />
+                                    <AccordionSummary id="panel-header" aria-controls="panel-content" expandIcon={<ExpandMoreIcon fontSize="large" style={{ color: 'rgb(254 240 138)' }} />} className="text-2xl font-bold py-2 text-yellow-200">
+                                        <img src={icon44} alt="course1" className="w-[100px] bg-black text-white py-5 md:py-2" />
                                         <h2 className="text-2xl font-bold py-10 pl-10 text-yellow-200 text-center">ADVANCED CS</h2>
                                     </AccordionSummary>
                                     <AccordionDetails className=''>
@@ -467,7 +468,7 @@ export default function CoursesPage() {
                                     borderWidth: '2px',
                                     borderStyle: 'solid',
                                 }} className="timeline-content js--fadeInRight rounded-4xl rounded-3xl border-2 border-yellow-200 mb-10">
-                                    <AccordionSummary id="panel-header" aria-controls="panel-content" className="text-2xl font-bold py-2 text-yellow-200">
+                                    <AccordionSummary id="panel-header" aria-controls="panel-content" expandIcon={<ExpandMoreIcon fontSize="large" style={{ color: 'rgb(254 240 138)' }} />} className="text-2xl font-bold py-2 text-yellow-200">
                                         <img src={devops} alt="course1" className="w-[100px] bg-black text-white py-3" />
                                         <h2 className="text-2xl font-bold py-10 pl-10 text-yellow-200 text-center">DEVOPS</h2>
                                     </AccordionSummary>
@@ -492,8 +493,8 @@ export default function CoursesPage() {
                                     borderWidth: '2px',
                                     borderStyle: 'solid',
                                 }} className="timeline-content js--fadeInRight">
-                                    <AccordionSummary id="panel-header" aria-controls="panel-content" className="text-2xl font-bold py-2 text-yellow-200">
-                                        <img src={icon71} alt="course1" className="w-[100px] py-6 md:py-0 bg-black text-white" />
+                                    <AccordionSummary id="panel-header" aria-controls="panel-content" expandIcon={<ExpandMoreIcon fontSize="large" style={{ color: 'rgb(254 240 138)' }} />} className="text-2xl font-bold py-2 text-yellow-200">
+                                        <img src={icon71} alt="course1" className="w-[100px] bg-black text-white" />
                                         <h2 className="text-2xl font-bold py-10 px-5 md:pl-10 text-yellow-200">C</h2>
                                     </AccordionSummary>
                                     <AccordionDetails className=''>
@@ -518,7 +519,7 @@ export default function CoursesPage() {
                                     borderWidth: '2px',
                                     borderStyle: 'solid',
                                 }} className="timeline-content js--fadeInRight">
-                                    <AccordionSummary id="panel-header" aria-controls="panel-content" className="text-2xl font-bold py-2 text-yellow-200">
+                                    <AccordionSummary id="panel-header" aria-controls="panel-content" expandIcon={<ExpandMoreIcon fontSize="large" style={{ color: 'rgb(254 240 138)' }} />} className="text-2xl font-bold py-2 text-yellow-200">
                                         <img src={icon70} alt="course1" className="w-[100px] py-6 md:py-0 bg-black text-white" />
                                         <h2 className="text-2xl font-bold py-10 px-5 md:pl-10 text-yellow-200">C++</h2>
                                     </AccordionSummary>
@@ -545,8 +546,8 @@ export default function CoursesPage() {
                                     borderWidth: '2px',
                                     borderStyle: 'solid',
                                 }} className="timeline-content js--fadeInRight">
-                                    <AccordionSummary id="panel-header" aria-controls="panel-content" className="text-2xl font-bold py-2 text-yellow-200">
-                                        <img src={icon7} alt="course1" className="w-[100px] py-6 md:py-0 bg-black text-white" />
+                                    <AccordionSummary id="panel-header" aria-controls="panel-content" expandIcon={<ExpandMoreIcon fontSize="large" style={{ color: 'rgb(254 240 138)' }} />} className="text-2xl font-bold py-2 text-yellow-200">
+                                        <img src={icon7} alt="course1" className="w-[100px] py-6 bg-black text-white" />
                                         <h2 className="text-2xl font-bold py-10 pl-10 text-yellow-200">PYTHON BEGINNER</h2>
                                     </AccordionSummary>
                                     <AccordionDetails className=''>
@@ -571,9 +572,9 @@ export default function CoursesPage() {
                                     borderWidth: '2px',
                                     borderStyle: 'solid',
                                 }} className="timeline-content js--fadeInRight rounded-4xl rounded-3xl border-2 border-yellow-200 mb-10">
-                                    <AccordionSummary id="panel-header" aria-controls="panel-content" className="text-2xl font-bold py-2 text-yellow-200">
-                                        <img src={icon7} alt="course1" className="w-[100px] py-6 md:py-0 bg-black text-white" />
-                                        <h2 className="text-2xl font-bold py-10 px-5 md:pl-10 text-yellow-200">PYTHON INTERMEDIATE</h2>
+                                    <AccordionSummary id="panel-header" aria-controls="panel-content" expandIcon={<ExpandMoreIcon fontSize="large" style={{ color: 'rgb(254 240 138)' }} />} className="text-2xl font-bold py-2 text-yellow-200">
+                                        <img src={icon7} alt="course1" className="w-[100px] py-6 bg-black text-white" />
+                                        <h2 className="md:text-2xl font-bold py-10 px-5 md:pl-10 text-yellow-200">PYTHON INTERMEDIATE</h2>
                                     </AccordionSummary>
                                     <AccordionDetails className=''>
                                         <h3 className="text-2xl font-bold py-2">Programming Language</h3>
@@ -597,7 +598,7 @@ export default function CoursesPage() {
                                     borderWidth: '2px',
                                     borderStyle: 'solid',
                                 }} className="timeline-content js--fadeInRight">
-                                    <AccordionSummary id="panel-header" aria-controls="panel-content" className="text-2xl font-bold py-2 text-yellow-200">
+                                    <AccordionSummary id="panel-header" aria-controls="panel-content" expandIcon={<ExpandMoreIcon fontSize="large" style={{ color: 'rgb(254 240 138)' }} />} className="text-2xl font-bold py-2 text-yellow-200">
                                         <img src={icon39} alt="course1" className="w-[100px] py-6 md:py-0 bg-black text-white" />
                                         <h2 className="text-2xl font-bold py-10 px-5 md:pl-10 text-yellow-200">WEB DEVELOPMENT</h2>
                                     </AccordionSummary>
@@ -623,7 +624,7 @@ export default function CoursesPage() {
                                     borderWidth: '2px',
                                     borderStyle: 'solid',
                                 }} className="timeline-content js--fadeInRight">
-                                    <AccordionSummary id="panel-header" aria-controls="panel-content" className="text-2xl font-bold py-2 text-yellow-200">
+                                    <AccordionSummary id="panel-header" aria-controls="panel-content" expandIcon={<ExpandMoreIcon fontSize="large" style={{ color: 'rgb(254 240 138)' }} />} className="text-2xl font-bold py-2 text-yellow-200">
                                         <img src={icon39} alt="course1" className="w-[100px] py-6 md:py-0 bg-black text-white" />
                                         <h2 className="text-2xl font-bold py-10 px-5 md:pl-10 text-yellow-200">WEB DEVELOPMENT 2</h2>
                                     </AccordionSummary>
@@ -648,8 +649,8 @@ export default function CoursesPage() {
                                     borderWidth: '2px',
                                     borderStyle: 'solid',
                                 }} className="timeline-content js--fadeInRight">
-                                    <AccordionSummary id="panel-header" aria-controls="panel-content" className="text-2xl font-bold py-2 text-yellow-200">
-                                        <img src={icon69} alt="course1" className="w-[100px] py-6 md:py-0 bg-black text-white" />
+                                    <AccordionSummary id="panel-header" aria-controls="panel-content" expandIcon={<ExpandMoreIcon fontSize="large" style={{ color: 'rgb(254 240 138)' }} />} className="text-2xl font-bold py-2 text-yellow-200">
+                                        <img src={icon69} alt="course1" className="w-[100px] bg-black text-white" />
                                         <h2 className="text-2xl font-bold py-10 px-5 md:pl-10 text-yellow-200">C#</h2>
                                     </AccordionSummary>
                                     <AccordionDetails className=''>
