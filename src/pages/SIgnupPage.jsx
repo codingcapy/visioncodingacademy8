@@ -40,7 +40,7 @@ export default function SignupPage() {
             if (res?.data?.success) {
                 setNotification("success! Redirecting...")
                 setTimeout(() => {
-                    navigate("/login")
+                    navigate("/verify")
                 }, 1000)
             }
             else {
