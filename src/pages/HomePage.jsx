@@ -132,7 +132,7 @@ export default function HomePage() {
                         <iframe
                             width="300"
                             height="315"
-                            src="https://www.youtube.com/embed/Y4I_PPDyyMI"
+                            src="https://www.youtube.com/embed/QgVuHhuLcN8"
                             title="YouTube video player"
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -142,7 +142,7 @@ export default function HomePage() {
                         <iframe
                             width="300"
                             height="315"
-                            src="https://www.youtube.com/embed/VnBJe2vxJjA"
+                            src="https://www.youtube.com/embed/oG13shethQo"
                             title="YouTube video player"
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -152,7 +152,7 @@ export default function HomePage() {
                         <iframe
                             width="300"
                             height="315"
-                            src="https://www.youtube.com/embed/GrfhatH_YjU?start=88"
+                            src="https://www.youtube.com/embed/3AYpVrYVRak"
                             title="YouTube video player"
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
