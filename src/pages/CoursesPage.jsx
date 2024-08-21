@@ -120,8 +120,8 @@ export default function CoursesPage() {
                                     borderWidth: '2px',
                                     borderStyle: 'solid',
                                 }} className="timeline-content js--fadeInRight">
-                                    <AccordionSummary id="panel-header" aria-controls="panel-content" expandIcon={<ExpandMoreIcon fontSize="large" style={{ color: 'rgb(254 240 138)' }} />} className="text-2xl font-bold py-2 text-yellow-200">
-                                        <img src={icon7} alt="course1" className="w-[100px] py-6 md:py-4 bg-black text-white" />
+                                    <AccordionSummary id="panel-header" aria-controls="panel-content" expandIcon={<ExpandMoreIcon fontSize="large" style={{ color: 'rgb(254 240 138)' }} />} className="text-2xl font-bold text-yellow-200">
+                                        <img src={icon7} alt="course1" className="w-[100px] py-6 md:py-0 bg-black text-white" />
                                         <h2 className="text-2xl font-bold py-10 pl-10 text-yellow-200">PYTHON BEGINNER</h2>
                                     </AccordionSummary>
                                     <AccordionDetails className=''>
@@ -147,8 +147,8 @@ export default function CoursesPage() {
                                     borderStyle: 'solid',
                                 }} className="timeline-content js--fadeInRight rounded-4xl rounded-3xl border-2 border-yellow-200 mb-10">
                                     <AccordionSummary id="panel-header" aria-controls="panel-content" expandIcon={<ExpandMoreIcon fontSize="large" style={{ color: 'rgb(254 240 138)' }} />} className="text-2xl font-bold py-2 text-yellow-200">
-                                        <img src={icon7} alt="course1" className="w-[100px] py-6 bg-black text-white" />
-                                        <h2 className="text-[20px] md:text-2xl font-bold py-10 px-5 md:pl-10 text-yellow-200">PYTHON INTERMEDIATE</h2>
+                                        <img src={icon7} alt="course1" className="w-[100px] py-6 md:py-0 bg-black text-white" />
+                                        <h2 className="text-[20px] md:text-[22px] font-bold py-10 px-5 md:pl-10 text-yellow-200">PYTHON INTERMEDIATE</h2>
                                     </AccordionSummary>
                                     <AccordionDetails className=''>
                                         <h3 className="text-2xl font-bold py-2">Programming Language</h3>
@@ -409,7 +409,7 @@ export default function CoursesPage() {
                         <h1 className="pb-10 text-4xl md:text-6xl text-yellow-200 text-center" id="computer-science">Adult
                             Courses</h1>
                         <section className="md:w-[500px] mx-auto">
-                            <div className='mb-10'>
+                            <div className='mb-10 px-2 md:px-0'>
                                 <Accordion sx={{
                                     backgroundColor: 'black',
                                     color: 'white',
@@ -434,7 +434,7 @@ export default function CoursesPage() {
                                     </AccordionDetails>
                                 </Accordion>
                             </div>
-                            <div className='mb-10'>
+                            <div className='mb-10 px-2 md:px-0'>
                                 <Accordion sx={{
                                     backgroundColor: 'black',
                                     color: 'white',
@@ -459,7 +459,7 @@ export default function CoursesPage() {
                                     </AccordionDetails>
                                 </Accordion>
                             </div>
-                            <div className='mb-10'>
+                            <div className='mb-10 px-2 md:px-0'>
                                 <Accordion sx={{
                                     backgroundColor: 'black',
                                     color: 'white',
@@ -546,8 +546,8 @@ export default function CoursesPage() {
                                     borderWidth: '2px',
                                     borderStyle: 'solid',
                                 }} className="timeline-content js--fadeInRight">
-                                    <AccordionSummary id="panel-header" aria-controls="panel-content" expandIcon={<ExpandMoreIcon fontSize="large" style={{ color: 'rgb(254 240 138)' }} />} className="text-2xl font-bold py-2 text-yellow-200">
-                                        <img src={icon7} alt="course1" className="w-[100px] py-6 bg-black text-white" />
+                                    <AccordionSummary id="panel-header" aria-controls="panel-content" expandIcon={<ExpandMoreIcon fontSize="large" style={{ color: 'rgb(254 240 138)' }} />} className="text-2xl font-bold text-yellow-200">
+                                        <img src={icon7} alt="course1" className="w-[100px] py-6 md:py-0 bg-black text-white" />
                                         <h2 className="text-2xl font-bold py-10 pl-10 text-yellow-200">PYTHON BEGINNER</h2>
                                     </AccordionSummary>
                                     <AccordionDetails className=''>
@@ -573,8 +573,8 @@ export default function CoursesPage() {
                                     borderStyle: 'solid',
                                 }} className="timeline-content js--fadeInRight rounded-4xl rounded-3xl border-2 border-yellow-200 mb-10">
                                     <AccordionSummary id="panel-header" aria-controls="panel-content" expandIcon={<ExpandMoreIcon fontSize="large" style={{ color: 'rgb(254 240 138)' }} />} className="text-2xl font-bold py-2 text-yellow-200">
-                                        <img src={icon7} alt="course1" className="w-[100px] py-6 bg-black text-white" />
-                                        <h2 className="md:text-2xl font-bold py-10 px-5 md:pl-10 text-yellow-200">PYTHON INTERMEDIATE</h2>
+                                        <img src={icon7} alt="course1" className="w-[100px] py-6 md:py-0 bg-black text-white" />
+                                        <h2 className="text-[20px] md:text-[22px] font-bold py-10 px-5 md:pl-10 text-yellow-200">PYTHON INTERMEDIATE</h2>
                                     </AccordionSummary>
                                     <AccordionDetails className=''>
                                         <h3 className="text-2xl font-bold py-2">Programming Language</h3>
@@ -600,7 +600,7 @@ export default function CoursesPage() {
                                 }} className="timeline-content js--fadeInRight">
                                     <AccordionSummary id="panel-header" aria-controls="panel-content" expandIcon={<ExpandMoreIcon fontSize="large" style={{ color: 'rgb(254 240 138)' }} />} className="text-2xl font-bold py-2 text-yellow-200">
                                         <img src={icon39} alt="course1" className="w-[100px] py-6 md:py-0 bg-black text-white" />
-                                        <h2 className="text-2xl font-bold py-10 px-5 md:pl-10 text-yellow-200">WEB DEVELOPMENT</h2>
+                                        <h2 className="text-[20px] md:text-2xl font-bold py-10 px-5 md:pl-10 text-yellow-200">WEB DEVELOPMENT</h2>
                                     </AccordionSummary>
                                     <AccordionDetails className=''>
                                         <h3 className="text-2xl font-bold py-2">HTML, CSS and JavaScript</h3>
@@ -626,7 +626,7 @@ export default function CoursesPage() {
                                 }} className="timeline-content js--fadeInRight">
                                     <AccordionSummary id="panel-header" aria-controls="panel-content" expandIcon={<ExpandMoreIcon fontSize="large" style={{ color: 'rgb(254 240 138)' }} />} className="text-2xl font-bold py-2 text-yellow-200">
                                         <img src={icon39} alt="course1" className="w-[100px] py-6 md:py-0 bg-black text-white" />
-                                        <h2 className="text-2xl font-bold py-10 px-5 md:pl-10 text-yellow-200">WEB DEVELOPMENT 2</h2>
+                                        <h2 className="text-[20px] md:text-2xl font-bold py-10 px-5 md:pl-10 text-yellow-200">WEB DEVELOPMENT 2</h2>
                                     </AccordionSummary>
                                     <AccordionDetails className=''>
                                         <h3 className="text-2xl font-bold py-2">React and Node.js</h3>
