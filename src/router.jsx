@@ -35,6 +35,7 @@ import PaymentPage from "./pages/PaymentPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import AccountPage from "./pages/AccountPage";
 import VerifyEmailPage from "./pages/VerifyEmailPage";
+import EmailVerifiedPage from "./pages/EmailVerifiedPage";
 
 export function Router() {
     const router = createBrowserRouter(
@@ -66,6 +67,7 @@ export function Router() {
                 <Route path="/payment" element={<PaymentPage />} />
                 <Route path="/forgotpassword" element={<ForgotPasswordPage />} />
                 <Route path="/verify" element={<VerifyEmailPage />} />
+                <Route path="/verified" element={<EmailVerifiedPage />} />
             </Route>
         )
     )
