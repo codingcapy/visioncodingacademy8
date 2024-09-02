@@ -140,7 +140,6 @@ header nav ul li:hover {
 
 #main-nav.visible {
     max-height: 500px;
-    /* Adjust the height according to your content */
     transition: max-height 0.5s ease-in;
 }
 
@@ -167,14 +166,10 @@ main {
 
 .hero-banner::before {
     content: "";
-    /* Create a pseudo-element for overlay */
     position: absolute;
-
     left: 0;
     width: 100%;
     height: 700px;
-
-    /* Adjust the opacity to darken/lighten */
 }
 
 .hero-banner2 {
@@ -191,21 +186,17 @@ main {
 
 .hero-banner2::before {
     content: "";
-    /* Create a pseudo-element for overlay */
     position: absolute;
 
     left: 0;
     width: 100%;
     height: 700px;
-
-    /* Adjust the opacity to darken/lighten */
 }
 
 .hero-banner h1,
 .hero-banner p,
 .hero-banner button {
     z-index: 1;
-    /* Ensure text and button are above the overlay */
 }
 
 .glow {
@@ -274,7 +265,6 @@ main {
 .ad1 a {
     position: relative;
     z-index: 2;
-    /* Ensure text and button are above the overlay */
 }
 
 .ad2 {
@@ -300,7 +290,6 @@ main {
 .ad2 a {
     position: relative;
     z-index: 2;
-    /* Ensure text and button are above the overlay */
 }
 
 .ad3 {
@@ -326,7 +315,6 @@ main {
 .ad3 a {
     position: relative;
     z-index: 2;
-    /* Ensure text and button are above the overlay */
 }
 
 .summercamp {
@@ -378,7 +366,6 @@ main {
     background-color: rgba(0, 0, 0, 0.75);
 }
 
-
 .summercamp2 h1,
 .summercamp2 p {
     z-index: 1;
@@ -392,30 +379,142 @@ main {
     top: 0;
     bottom: 0;
     z-index: -1;
- }
-
- #pop-up{
-    position:fixed;
-    top:0px;
-    left:0px;    
-    width:100vw;
-    height:100vh;
-	z-index:1000;
-	background-color: rgba(0, 0, 0, 0.6);    
-	font-size:.85em;
 }
 
-#pop-up-div{
-	position:absolute;
-	left:50%;
-	top:40%;
-	transform:translate(-50%, -50%);
-	max-width:400px;
-	min-width:300px;
-	padding:10px;
-	border-radius:10px;
-	background-color: rgb(46, 46, 46);
-	color:white;
+#pop-up {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: .85em;
+}
+
+#pop-up-div {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    max-width: 400px;
+    min-width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(46, 46, 46);
+    color: white;
+}
+
+.about {
+    height: 300px;
+    padding: 30px;
+    background-image: url("/about2.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 0 5px #000;
+}
+
+.about::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+.about h1,
+.about p {
+    z-index: 1;
+}
+
+.approach {
+    height: 1200px;
+    padding: 30px;
+    background-image: url("/banner-bg.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.lightbox-image {
+    max-width: 100%;
+    max-height: 100%;
+    transition: opacity 0.5s ease;
+}
+
+.lightbox.fade-in {
+    opacity: 1;
+}
+
+.lightbox.fade-out {
+    opacity: 0;
+}
+
+#handboy {
+    animation: swing ease-in-out 1.3s infinite alternate;
+    transform-origin: 98% 98%;
+    transform-box: fill-box;
+
+}
+
+#girllight {
+    animation: swing ease-in-out 1.3s infinite alternate;
+    transform-origin: 0% 97%;
+    transform-box: fill-box;
+}
+
+#hairgirl {
+    animation: swinghair ease-in-out 1.3s infinite alternate;
+    transform-origin: 60% 0%;
+    transform-box: fill-box;
+}
+
+#zero {
+    transform-origin: bottom;
+    transform-box: fill-box;
+}
+
+@keyframes swing {
+    0% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(-10deg);
+    }
+}
+
+@keyframes swinghair {
+    0% {
+        transform: rotate(6deg);
+    }
+
+    100% {
+        transform: rotate(-6deg);
+    }
 }
 
 @media(min-width:720px) {
@@ -478,113 +577,8 @@ main {
         right: 100px;
     }
 
-    #pop-up-div{
-        max-width:1000px;
-        top:50%;
-    }
-}
-
-.about {
-    height: 300px;
-    padding: 30px;
-    background-image: url("/about2.jpg");
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-shadow: 0 0 5px #000;
-}
-
-.about::before {
-    content: "";
-    /* Create a pseudo-element for overlay */
-    position: absolute;
-
-    left: 0;
-    width: 100%;
-    height: 300px;
-    background-color: rgba(0, 0, 0, 0.65);
-    /* Adjust the opacity to darken/lighten */
-}
-
-.about h1,
-.about p {
-    z-index: 1;
-    /* Ensure text and button are above the overlay */
-}
-
-.approach {
-    height: 1200px;
-    padding: 30px;
-    background-image: url("/banner-bg.png");
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    opacity: 0;
-    transition: opacity 0.5s;
-}
-
-.lightbox-image {
-    max-width: 100%;
-    max-height: 100%;
-    transition: opacity 0.5s ease;
-}
-
-.lightbox.fade-in {
-    opacity: 1;
-}
-
-.lightbox.fade-out {
-    opacity: 0;
-}
-
-@media(min-width:720px) {
-    .hero-banner {
-        height: 700px;
-    }
-    
-    .map {
-        width: 100%;
-        height: 400px;
-    }
-
-    .approach {
-        height: 750px;
-    }
-
-    .arrow {
-        position: absolute;
+    #pop-up-div {
+        max-width: 1000px;
         top: 50%;
-        transform: translateY(-50%);
-        font-size: 48px;
-        color: white;
-        cursor: pointer;
-        user-select: none;
-    }
-
-    .left-arrow {
-        left: 100px;
-    }
-
-    .right-arrow {
-        right: 100px;
     }
 }
