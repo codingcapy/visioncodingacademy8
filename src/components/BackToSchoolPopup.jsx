@@ -12,6 +12,7 @@ export default function BackToSchoolPopup(){
                     <p className="text-sm md:text-2xl text-center pb-1 md:pb-2"><span className="text-yellow-300">All 1-on-1 classes</span> $300/month 4 courses 90 minutes/class</p>
                     <p className="text-sm md:text-2xl text-center pb-1 md:pb-2"><span className="text-yellow-300">All group classes</span> $192/month 4 courses 90 minutes/class</p>
                     <img src={image} alt="" className="py-1 md:py-2 w-[400px] mx-auto" />
+                    <p className="text-sm md:text-2xl text-center pb-1 md:pb-2">Offer ends September 30, 2024</p>
                     <button id="ok-button"
                         className="flex flex-col mx-auto my-1 md:my-3 px-10 md:px-16 py1 md:py-3 border-4 rounded border-yellow-300 text-yellow-300 font-bold text-xl md:text-2xl hover:bg-yellow-300 hover:text-black transition-all ease duration-500">OK</button>
                 </div>
