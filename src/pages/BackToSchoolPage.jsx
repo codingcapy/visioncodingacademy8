@@ -6,7 +6,7 @@ import ScrollReveal from "scrollreveal";
 export default function BackToSchoolPage() {
 
     useEffect(() => {
-        document.title = 'Summer Camp | Vision Coding';
+        document.title = 'Back To School | Vision Coding';
     }, []);
 
     $(function () {
