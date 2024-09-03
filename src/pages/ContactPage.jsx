@@ -159,6 +159,22 @@ export default function ContactPage() {
         const last_name = e.target.lastname.value;
         const contact = e.target.contact.value;
         const content = e.target.content.value;
+        if (first_name.length > 200){
+            setNotification("First name is too long!")
+            return
+        }
+        if (last_name.length > 200){
+            setNotification("Last name is too long!")
+            return
+        }
+        if (contact.length > 255){
+            setNotification("Contact is too long!")
+            return
+        }
+        if (content.length > 40000){
+            setNotification("Your message is too long!")
+            return
+        }
         const newQuestion = { first_name, last_name, contact, content, token }
         try {
             const res = await axios.post(`${DOMAIN}/api/questions`, newQuestion);
