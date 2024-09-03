@@ -57,7 +57,7 @@ export default function Header() {
                     </li>
                     <li
                         className="px-5 py-2 md:py-5 text-center md:block rounded-md transition ease-in-out duration-300 text-lg md:text-2xl">
-                        <NavLink to="/summer-camp" onClick={() => window.innerWidth < 700 && setNavVisible(false)}>Special Events<span
+                        <NavLink to="/back-to-school" onClick={() => window.innerWidth < 700 && setNavVisible(false)}>Special Events<span
                             className="text-green-500 px-2 pb-5 text-sm font-bold">NEW!</span></NavLink>
                     </li>
                     <li

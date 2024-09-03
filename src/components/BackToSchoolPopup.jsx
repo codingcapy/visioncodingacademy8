@@ -19,7 +19,7 @@ export default function BackToSchoolPopup(props) {
                 <p className="text-sm md:text-2xl text-center pb-1 md:pb-2"><span className="text-yellow-300">All group classes</span> $192/month 4 courses 90 minutes/class</p>
                 <img src={image} alt="" className="py-1 md:py-2 w-[400px] mx-auto" />
                 <p className="text-sm md:text-2xl text-center pb-1 md:pb-2">Offer ends September 30, 2024</p>
-                <NavLink to="/courses" onClick={()=>props.setShowPopup(false)}
+                <NavLink to="/back-to-school" onClick={()=>props.setShowPopup(false)}
                     className="flex flex-col mx-auto my-1 md:my-3 px-2 text-center py-1 md:py-3 border-4 rounded border-yellow-300 text-yellow-300 font-bold text-xl md:text-2xl hover:bg-yellow-300 hover:text-black transition-all ease duration-500 w-[200px]">More Info</NavLink>
             </div>
         </section>

@@ -38,6 +38,7 @@ import VerifyEmailPage from "./pages/VerifyEmailPage";
 import EmailVerifiedPage from "./pages/EmailVerifiedPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import SummerArchivePage from "./pages/SummerArchivePage";
+import BackToSchoolPage from "./pages/BackToSchoolPage";
 
 export function Router() {
     const router = createBrowserRouter(
@@ -45,7 +46,6 @@ export function Router() {
             <Route element={<Layout />}>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/about" element={<AboutPage />} />
-                <Route path="/summer-camp" element={<SummerArchivePage />} />
                 <Route path="/courses" element={<CoursesPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/gallery" element={<GalleryPage />} />
@@ -70,6 +70,9 @@ export function Router() {
                 <Route path="/forgotpassword" element={<ForgotPasswordPage />} />
                 <Route path="/verify" element={<VerifyEmailPage />} />
                 <Route path="/verified" element={<EmailVerifiedPage />} />
+                <Route path="/summer-camp" element={<SummerArchivePage />} />
+                <Route path="/back-to-school" element={<BackToSchoolPage />} />
+                <Route path="/archive/summer-camp" element={<SummerCampPage />} />
                 <Route path="/*" element={<NotFoundPage />} />
             </Route>
         )

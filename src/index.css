@@ -345,6 +345,34 @@ main {
     z-index: 1;
 }
 
+.school {
+    height: 550px;
+    padding: 30px;
+    background-image: url("/fall.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 0 5px #000;
+}
+
+.school::before {
+    height: 550px;
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+.school h1,
+.school p,
+.school .navlink {
+    z-index: 1;
+}
+
 .summercamp {
     height: 500px;
     padding: 30px;
@@ -588,6 +616,14 @@ main {
     }
 
     .summercamp2::before {
+        height: 700px;
+    }
+
+    .school{
+        height: 700px;
+    }
+
+    .school::before {
         height: 700px;
     }
 
