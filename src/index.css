@@ -346,9 +346,9 @@ main {
 }
 
 .school {
-    height: 550px;
+    height: 580px;
     padding: 30px;
-    background-image: url("/fall.jpg");
+    background-image: url("/classroom.png");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -359,12 +359,12 @@ main {
 }
 
 .school::before {
-    height: 550px;
+    height: 580px;
     content: "";
     position: absolute;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.65);
+    background-color: rgba(0, 0, 0, 0.70);
 }
 
 .school h1,
