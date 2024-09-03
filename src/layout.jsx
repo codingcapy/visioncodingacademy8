@@ -20,12 +20,12 @@ export default function Layout() {
     const [showPopup, setShowPopup] = useState(true)
 
     return (
-        <div className="flex flex-col min-h-screen bg-black text-white" onClick={() => setShowPopup(false)}>
+        <div className="flex flex-col min-h-screen bg-black text-white">
             <ScrollToTop />
             <Header />
             <Outlet />
             <Footer />
-            {showPopup && <BackToSchoolPopup />}
+            {showPopup && <BackToSchoolPopup setShowPopup={setShowPopup} />}
         </div>
 
     )
