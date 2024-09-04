@@ -15,8 +15,8 @@ export default function FloatingNav() {
 
     return (
         <>
-            <div className="hidden md:block fixed bottom-16 right-16 bg-transparent">
-                <div className="py-2 bg-transparent z-10">
+            <div className="hidden md:block fixed bottom-16 right-16 bg-transparent z-10">
+                <div className="py-2 bg-transparent">
                     <a href="https://www.instagram.com/vision.coding/"
                         className="nav-element py-2 text-2xl bg-transparent" target="_blank">
                         <div className="bg-yellow-300 rounded-full h-[75px] w-[75px]">
@@ -47,7 +47,7 @@ export default function FloatingNav() {
                     </a>
                 </div>
             </div>
-            <div className="md:hidden fixed bottom-2 right-1 bg-transparent">
+            <div className="md:hidden fixed bottom-2 right-1 bg-transparent z-10">
                 <div className="py-2 bg-transparent z-10">
                     <a href="https://www.instagram.com/vision.coding/"
                         className="nav-element py-2 text-lg bg-transparent" target="_blank">
