@@ -21,7 +21,7 @@ import dannyImg from "/member2_danny4.png"
 import uhdImg from "/member3_uhd3.png"
 import lukeImg from "/member4_luke4.png"
 import raulImg from "/member9_raul2.jpg"
-import noIcon from "/lightbulb-black.jpg"
+import noIcon from "/lightbulb-black2.jpg"
 import paulImg from "/member7_paul.jpg"
 import taylorImg from "/member8_taylor3.png"
 import testimonial1 from "/testimonial1.jpg"
@@ -214,20 +214,9 @@ export default function AboutPage() {
                 </section>
                 <section className="py-10 md:grid md:grid-cols-5 md:pl-20 mx-auto">
                     <div>
-                        <img src={dannyImg} alt="Danny" className="timeline-content js--fadeInRight w-[250px] px-2 cursor-pointer" />
-                        <h3 className="timeline-content js--fadeInRight pl-2 text-2xl">Danny</h3>
-                        <h2 className="timeline-content js--fadeInRight pl-2 text-lg">Branch Manager</h2>
-                    </div>
-                    <div>
                         <img src={uhdImg} alt="Hwanyong" className="timeline-content js--fadeInRight w-[250px] px-2 cursor-pointer" />
                         <h3 className="timeline-content js--fadeInRight pl-2 text-2xl">Hwanyong</h3>
                         <h2 className="timeline-content js--fadeInRight pl-2 text-lg">Backend Engineer</h2>
-                    </div>
-                    <div>
-                        <img src={lukeImg} alt="Luke" className="timeline-content js--fadeInRight w-[250px] px-2 cursor-pointer" />
-                        <h3 className="timeline-content js--fadeInRight pl-2 text-2xl">
-                            Luke</h3>
-                        <h2 className="timeline-content js--fadeInRight pl-2 text-lg">Full Stack Developer</h2>
                     </div>
                     <div>
                         <img src={paulImg} alt="Paul" className="timeline-content js--fadeInRight w-[250px] px-2 cursor-pointer" />
@@ -240,21 +229,15 @@ export default function AboutPage() {
                         <h2 className="timeline-content js--fadeInRight text-lg">Software Engineer</h2>
                     </div>
                     <div>
-                        <img src={taylorImg} alt="Taylor" className="timeline-content js--fadeInRight w-[250px] px-2 cursor-pointer" />
-                        <h3 className="timeline-content js--fadeInRight text-2xl">Taylor</h3>
-                        <h2 className="timeline-content js--fadeInRight text-lg">Full Stack Developer</h2>
-                    </div>
-                    <div>
-                        <img src={noIcon} alt="Madhu" className="timeline-content js--fadeInRight w-[250px] px-2 cursor-pointer" />
-                        <h3 className="timeline-content js--fadeInRight text-2xl">Sean</h3>
+                        <img src={noIcon} alt="Taylor" className="timeline-content js--fadeInRight w-[250px] px-2 cursor-pointer" />
+                        <h3 className="timeline-content js--fadeInRight text-2xl">Jessie</h3>
                         <h2 className="timeline-content js--fadeInRight text-lg">Software Engineer</h2>
                     </div>
-
                     <div>
                         <img src={noIcon} alt="Kay" className="timeline-content js--fadeInRight w-[250px] px-2 cursor-pointer" />
                         <h3 className="timeline-content js--fadeInRight pl-2 text-2xl">
                             Kay</h3>
-                        <h2 className="timeline-content js--fadeInRight pl-2 text-lg">Project Manager</h2>
+                        <h2 className="timeline-content js--fadeInRight pl-2 text-lg">Software Engineer</h2>
                     </div>
                     <div>
                         <img src={noIcon} alt="JK" className="timeline-content js--fadeInRight w-[250px] px-2 cursor-pointer" />
