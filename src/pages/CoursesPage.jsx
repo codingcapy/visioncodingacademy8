@@ -89,9 +89,9 @@ export default function CoursesPage() {
 
     return (
         <main className="flex-1">
-            <div className="bg-black text-white flex flex-col md:w-[1000px] lg:w-[1440px] mx-auto">
+            <div className="bg-black text-white flex flex-col lg:w-[1000px] xl:w-[1440px] mx-auto">
                 <section className="max-w-[1000px] mx-auto py-10">
-                    <h3 className="pl-2 text-5xl md:text-8xl py-10 pb-5 text-center">Vision Coding Courses</h3>
+                    <h3 className="pl-2 text-5xl lg:text-8xl py-10 pb-5 text-center">Vision Coding Courses</h3>
                     <p className="timeline-content js--fadeInLeft text-center text-lg md:text-2xl px-10">Each course is
                         crafted
                         for
@@ -105,13 +105,13 @@ export default function CoursesPage() {
                         className="static bg-gradient-to-r from-black via-yellow-400 to-black h-[2px]">
                     </div>
                     <img src={visionCodingIcon} alt=""
-                        className="relative bottom-[45px] md:bottom-[60px] left-[40%] md:left-[48%] w-[75px] md:w-[100px] bg-black" />
+                        className="relative bottom-[45px] md:bottom-[60px] left-[40%] lg:left-[48%] w-[75px] lg:w-[100px] bg-black" />
                 </div>
-                <div className='md:grid grid-cols-2'>
+                <div className='xl:grid grid-cols-2'>
                     <div>
                         <h1 className="pb-10 text-4xl md:text-6xl text-yellow-200 text-center">K-12 Courses</h1>
-                        <section className="md:w-[500px] mx-auto">
-                            <div className='mb-10 px-2 md:px-0'>
+                        <section className="sm:w-[500px] mx-auto">
+                        <div className='mb-10 px-2 md:px-0'>
                                 <Accordion sx={{
                                     backgroundColor: 'black',
                                     color: 'white',

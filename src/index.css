@@ -577,7 +577,7 @@ main {
     }
 }
 
-@media(min-width:720px) {
+@media(min-width:1280px) {
     .hero-banner {
         height: 700px;
     }
