@@ -1,0 +1,170 @@
+# Code Refactoring Instructions for Vision Coding Academy Website
+
+## 1. Component Structure Improvements
+
+### **Issue Description**:
+- **Location**: src/pages/HomePage.jsx
+- **Explanation**: The HomePage component is too large (800+ lines) and handles too many responsibilities
+- **Recommendation**: Break down the HomePage into smaller, reusable components:
+  ```
+  src/
+    components/
+      home/
+        HeroBanner.jsx
+        IntroSection.jsx
+        CourseCategories.jsx
+        TeamSection.jsx
+        ContactSection.jsx
+        LocationMaps.jsx
+  ```
+
+### **Issue Description**:
+- **Location**: src/router.jsx
+- **Explanation**: Route definitions are flat and could be better organized
+- **Recommendation**: Group routes by feature/category:
+  ```javascript
+  const courseRoutes = {
+    path: "courses",
+    children: [
+      { path: "python", element: <PythonPage /> },
+      { path: "python2", element: <Python2Page /> },
+      // ... other course routes
+    ]
+  };
+  ```
+
+## 2. Code Reusability
+
+### **Issue Description**:
+- **Location**: HomePage.jsx (ScrollReveal initialization)
+- **Explanation**: ScrollReveal initialization logic is duplicated and mixed with component logic
+- **Recommendation**: Create a custom hook:
+  ```javascript
+  // src/hooks/useScrollReveal.js
+  export const useScrollReveal = (options) => {
+    useEffect(() => {
+      // ScrollReveal initialization logic
+    }, [options]);
+  };
+  ```
+
+### **Issue Description**:
+- **Location**: Multiple components using similar styling
+- **Explanation**: Repeated Tailwind classes across components
+- **Recommendation**: Create reusable style components:
+  ```javascript
+  // src/components/common/SectionTitle.jsx
+  export const SectionTitle = ({ children }) => (
+    <h2 className="text-4xl xl:text-6xl text-center py-5 text-yellow-200">
+      {children}
+    </h2>
+  );
+  ```
+
+## 3. Performance Optimization
+
+### **Issue Description**:
+- **Location**: HomePage.jsx video background
+- **Explanation**: Large video file loaded immediately on page load
+- **Recommendation**: Implement lazy loading and optimize video loading:
+  ```javascript
+  const VideoBackground = lazy(() => import('../components/VideoBackground'));
+  // Use loading placeholder while video loads
+  ```
+
+### **Issue Description**:
+- **Location**: Multiple image imports
+- **Explanation**: Many images imported at the top level
+- **Recommendation**: Implement dynamic imports and lazy loading for images:
+  ```javascript
+  const techIcons = {
+    icon1: () => import('/public/icon1.svg'),
+    icon2: () => import('/public/icon2.svg'),
+    // ... other icons
+  };
+  ```
+
+## 4. State Management
+
+### **Issue Description**:
+- **Location**: Multiple components using useState
+- **Explanation**: State management is scattered across components
+- **Recommendation**: Consolidate state management using Zustand (already in dependencies):
+  ```javascript
+  // src/store/UIStore.js
+  export const useUIStore = create((set) => ({
+    showPopup: true,
+    setShowPopup: (show) => set({ showPopup: show }),
+    // other UI state
+  }));
+  ```
+
+## 5. Code Organization
+
+### **Issue Description**:
+- **Location**: Project structure
+- **Explanation**: Current flat structure makes it harder to maintain
+- **Recommendation**: Reorganize project structure:
+  ```
+  src/
+    components/
+      common/       # Reusable components
+      layout/       # Layout components
+      features/     # Feature-specific components
+    hooks/         # Custom hooks
+    utils/         # Utility functions
+    constants/     # Constants and configurations
+    styles/        # Global styles and theme
+    services/      # API and other services
+    store/         # State management
+  ```
+
+## 6. Best Practices Implementation
+
+### **Issue Description**:
+- **Location**: All components
+- **Explanation**: Missing prop-types validation
+- **Recommendation**: Add PropTypes or TypeScript for better type safety:
+  ```javascript
+  import PropTypes from 'prop-types';
+  
+  CourseCard.propTypes = {
+    title: PropTypes.string.required,
+    description: PropTypes.string,
+    level: PropTypes.oneOf(['Beginner', 'Intermediate', 'Advanced']),
+    icon: PropTypes.string.required
+  };
+  ```
+
+### **Issue Description**:
+- **Location**: CSS organization
+- **Explanation**: Tailwind classes making components hard to read
+- **Recommendation**: Extract common styles into Tailwind components:
+  ```css
+  /* src/styles/components.css */
+  @layer components {
+    .section-title {
+      @apply text-4xl xl:text-6xl text-center py-5 text-yellow-200;
+    }
+    .card-container {
+      @apply relative xl:bg-gradient-to-r from-yellow-400 via-white to-yellow-400 rounded-tr-3xl rounded-bl-3xl xl:py-[2px] px-[2px] xl:my-10;
+    }
+  }
+  ```
+
+## Implementation Priority:
+
+1. Component Structure: Break down HomePage into smaller components
+2. Route Organization: Implement nested routing structure
+3. State Management: Set up Zustand stores
+4. Performance Optimization: Implement lazy loading
+5. Style Organization: Create reusable style components
+6. Code Organization: Restructure project folders
+
+These changes will improve:
+- Code maintainability
+- Performance
+- Developer experience
+- Reusability
+- Type safety
+- Project scalability

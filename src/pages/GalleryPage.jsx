@@ -1,213 +1,286 @@
-
 /*
 author: Paul Kim
 date: May 8, 2024
 version: 1.0
 description: Gallery page for Vision Coding Academy
- */
+*/
 
-import { useEffect } from 'react';
-import $ from 'jquery';
-import gallery1 from "/gallery1.png"
-import gallery2 from "/gallery2.png"
-import gallery3 from "/gallery3.png"
-import gallery4 from "/gallery4.png"
-import gallery5 from "/gallery5.png"
-import gallery6 from "/gallery6.png"
-import gallery7 from "/gallery7.png"
-import gallery8 from "/gallery8.jpeg"
-import gallery9 from "/gallery9.jpeg"
-import gallery10 from "/gallery10.jpeg"
-import gallery11 from "/gallery11.jpeg"
-import gallery12 from "/gallery12.jpeg"
-import gallery13 from "/gallery13.jpeg"
-import gallery14 from "/gallery14.jpeg"
-import gallery15 from "/gallery15.jpeg"
-import gallery16 from "/gallery16.jpeg"
-import gallery17 from "/gallery17.jpeg"
-import gallery18 from "/gallery18.jpeg"
-import gallery19 from "/gallery19.jpeg"
-import gallery20 from "/gallery20.jpeg"
-import gallery24 from "/gallery24.jpg"
-import gallery25 from "/gallery25.jpg"
-import gallery26 from "/gallery26.jpg"
-import gallery27 from "/gallery27.jpg"
-import gallery28 from "/gallery28.jpg"
-import gallery29 from "/gallery29.jpg"
-import gallery30 from "/gallery30.jpg"
-import gallery31 from "/gallery31.jpg"
-import gallery32 from "/gallery32.jpg"
-import gallery33 from "/gallery33.jpeg"
+import { useState, useEffect } from 'react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
+import { FaMapMarkerAlt, FaCode, FaLaptopCode, FaRobot, FaGamepad } from 'react-icons/fa';
+
+const LocationTab = ({ name, active, onClick, icon: Icon }) => (
+    <button
+        onClick={onClick}
+        className={`flex items-center gap-3 px-6 py-4 rounded-lg transition-all duration-300 ${
+            active 
+                ? 'bg-yellow-400 text-black shadow-lg shadow-yellow-400/20'
+                : 'bg-white/5 text-white/70 hover:bg-white/10'
+        }`}
+    >
+        <Icon size={20} />
+        <span className="font-medium">{name}</span>
+    </button>
+);
+
+const GalleryCard = ({ image, title, description, tags }) => (
+    <div className="group relative overflow-hidden rounded-lg">
+        {/* Image */}
+        <div className="aspect-video overflow-hidden rounded-lg">
+            <img 
+                src={image} 
+                alt={title}
+                className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+            />
+        </div>
+        
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
+                <p className="text-white/70 mb-4">{description}</p>
+                <div className="flex flex-wrap gap-2">
+                    {tags.map((tag, index) => (
+                        <span 
+                            key={index}
+                            className="px-3 py-1 rounded-full bg-yellow-400/20 text-yellow-400 text-sm"
+                        >
+                            {tag}
+                        </span>
+                    ))}
+                </div>
+            </div>
+        </div>
+    </div>
+);
 
 export default function GalleryPage() {
+    const [activeLocation, setActiveLocation] = useState('west-vancouver');
+    useScrollReveal();
 
     useEffect(() => {
         document.title = 'Gallery | Vision Coding';
     }, []);
 
-    useEffect(() => {
-        const $images = $('.image');
+    const locations = [
+        { id: 'west-vancouver', name: 'West Vancouver', icon: FaMapMarkerAlt },
+        { id: 'coquitlam', name: 'Coquitlam', icon: FaMapMarkerAlt }
+    ];
 
-        $images.each((index, image) => {
-            $(image).on('click', () => {
-                const lightbox = $('<div></div>').addClass('lightbox')[0];
+    const galleryItems = {
+        'west-vancouver': [
+            {
+                image: '/gallery1.png',
+                title: 'Python Game Development',
+                description: 'Students creating their first Python games',
+                tags: ['Python', 'Gaming', 'Coding']
+            },
+            {
+                image: '/gallery2.png',
+                title: 'Web Development Workshop',
+                description: 'Learning HTML, CSS, and JavaScript',
+                tags: ['Web Dev', 'Frontend']
+            },
+            {
+                image: '/gallery3.png',
+                title: 'Arduino Projects',
+                description: 'Building electronic projects with Arduino',
+                tags: ['Arduino', 'Electronics']
+            },
+            {
+                image: '/gallery24.jpg',
+                title: 'Robotics Class',
+                description: 'Students working on robotics projects',
+                tags: ['Robotics', 'Engineering']
+            },
+            {
+                image: '/gallery25.jpg',
+                title: 'Coding Competition',
+                description: 'Students participating in coding challenges',
+                tags: ['Competition', 'Problem Solving']
+            },
+            {
+                image: '/gallery26.jpg',
+                title: 'Group Projects',
+                description: 'Collaborative coding projects',
+                tags: ['Teamwork', 'Projects']
+            }
+        ],
+        'coquitlam': [
+            {
+                image: '/gallery27.jpg',
+                title: 'Advanced Programming',
+                description: 'Learning advanced coding concepts',
+                tags: ['Advanced', 'Programming']
+            },
+            {
+                image: '/gallery28.jpg',
+                title: 'Game Design Workshop',
+                description: 'Creating video games with Unity',
+                tags: ['Game Dev', 'Unity']
+            },
+            {
+                image: '/gallery29.jpg',
+                title: 'Mobile App Development',
+                description: 'Building mobile applications',
+                tags: ['Mobile', 'Apps']
+            },
+            {
+                image: '/gallery30.jpg',
+                title: 'Coding Lab',
+                description: 'Students in our coding laboratory',
+                tags: ['Lab', 'Practice']
+            },
+            {
+                image: '/gallery31.jpg',
+                title: 'Tech Presentations',
+                description: 'Students presenting their projects',
+                tags: ['Presentation', 'Projects']
+            },
+            {
+                image: '/gallery32.jpg',
+                title: 'Hackathon Event',
+                description: 'Students participating in hackathon',
+                tags: ['Hackathon', 'Innovation']
+            }
+        ]
+    };
 
-                const fullSizeImage = document.createElement('img');
-                fullSizeImage.src = image.src;
-                fullSizeImage.classList.add('lightbox-image');
-                lightbox.appendChild(fullSizeImage);
+    const categories = [
+        { icon: FaCode, name: 'All Activities' },
+        { icon: FaLaptopCode, name: 'Coding Classes' },
+        { icon: FaRobot, name: 'Robotics' },
+        { icon: FaGamepad, name: 'Game Development' }
+    ];
 
-                const leftArrow = document.createElement('div');
-                leftArrow.classList.add('arrow', 'left-arrow');
-                leftArrow.innerHTML = '&lt;';
-                lightbox.appendChild(leftArrow);
-
-                const rightArrow = document.createElement('div');
-                rightArrow.classList.add('arrow', 'right-arrow');
-                rightArrow.innerHTML = '&gt;';
-                lightbox.appendChild(rightArrow);
-
-                let currentIndex = index;
-
-                function showImage(index) {
-                    fullSizeImage.classList.add('fade-out');
-                    setTimeout(() => {
-                        fullSizeImage.src = $images.eq(index).attr('src');
-                        fullSizeImage.classList.remove('fade-out');
-                        fullSizeImage.classList.add('fade-in');
-                    }, 300);
-                }
-
-                $(leftArrow).on('click', (event) => {
-                    event.stopPropagation();
-                    currentIndex = (currentIndex - 1 + $images.length) % $images.length;
-                    showImage(currentIndex);
-                });
-
-                $(rightArrow).on('click', (event) => {
-                    event.stopPropagation();
-                    currentIndex = (currentIndex + 1) % $images.length;
-                    showImage(currentIndex);
-                });
-
-                $(lightbox).on('click', (event) => {
-                    if (event.target === lightbox) {
-                        lightbox.classList.add('fade-out');
-                        setTimeout(() => {
-                            document.body.removeChild(lightbox);
-                        }, 500);
-                    }
-                });
-
-                document.body.appendChild(lightbox);
-
-                setTimeout(() => {
-                    lightbox.classList.add('fade-in');
-                }, 50);
-            });
-        });
-    }, []);
+    const westVanLocation = "https://www.google.com/maps/search/?api=1&query=Vision+Coding+Academy+West+Vancouver";
+    const coquitlamLocation = "https://www.google.com/maps/search/?api=1&query=Vision+Coding+Academy+Coquitlam";
 
     return (
-        <main className="flex-1 mx-auto">
-            <div className="bg-black text-white flex flex-col">
-                <section className="max-w-[1000px] mx-auto py-10">
-                    <h3 className="pl-2 text-5xl md:text-6xl py-10 pb-5 text-center">Vision Coding Gallery</h3>
-                    <p className="timeline-content js--fadeInLeft text-center md:text-lg">West Vancouver & Coquitlam Locations</p>
-                </section>
-                <section className="py-10 px-1 md:grid md:grid-cols-5 md:pl-20 mx-auto">
-                    <div className="py-2">
-                        <img src={gallery1} alt="gallery" className="image w-[250px] px-2 cursor-pointer" />
+        <main className="flex-1">
+            {/* Hero Section */}
+            <section className="relative py-24 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-black to-gray-900">
+                    <div className="absolute inset-0 opacity-30">
+                        <div className="absolute inset-0 bg-[url('/binary.png')] bg-repeat animate-scroll" />
                     </div>
-                    <div className="py-2">
-                        <img src={gallery2} alt="gallery" className="image w-[250px] px-2 cursor-pointer" />
+                </div>
+                <div className="container relative">
+                    <div className="text-center mb-12">
+                        <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-yellow-200 to-yellow-400 bg-clip-text text-transparent mb-6">
+                            Our Learning Journey
+                        </h1>
+                        <p className="text-xl text-white/80 max-w-3xl mx-auto">
+                            Take a look at our students learning and creating amazing things at Vision Coding Academy.
+                        </p>
                     </div>
-                    <div className="py-2">
-                        <img src={gallery3} alt="gallery" className="image w-[250px] px-2 cursor-pointer" />
+
+                    {/* Location Tabs */}
+                    <div className="flex flex-wrap justify-center gap-4 mb-12">
+                        {locations.map((location) => (
+                            <LocationTab
+                                key={location.id}
+                                name={location.name}
+                                icon={location.icon}
+                                active={activeLocation === location.id}
+                                onClick={() => setActiveLocation(location.id)}
+                            />
+                        ))}
                     </div>
-                    <div className="py-2">
-                        <img src={gallery4} alt="gallery" className="image w-[250px] px-2 cursor-pointer" />
+
+                    {/* Category Filter */}
+                    <div className="flex flex-wrap justify-center gap-4">
+                        {categories.map((category, index) => (
+                            <button
+                                key={index}
+                                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 text-white/70 hover:bg-white/10 transition-colors duration-300"
+                            >
+                                <category.icon size={16} />
+                                <span>{category.name}</span>
+                            </button>
+                        ))}
                     </div>
-                    <div className="py-2">
-                        <img src={gallery5} alt="gallery" className="image w-[250px] px-2 cursor-pointer" />
+                </div>
+            </section>
+
+            {/* Gallery Grid */}
+            <section className="section bg-gradient-to-b from-black via-surface to-black">
+                <div className="container">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {galleryItems[activeLocation].map((item, index) => (
+                            <GalleryCard 
+                                key={index}
+                                {...item}
+                            />
+                        ))}
                     </div>
-                    <div className="py-2">
-                        <img src={gallery6} alt="gallery" className="image w-[250px] px-2 cursor-pointer" />
+                </div>
+            </section>
+
+            {/* Location Info */}
+            <section className="section bg-black">
+                <div className="container">
+                    <div className="grid md:grid-cols-2 gap-16">
+                        <a 
+                            href={westVanLocation}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="card border border-white/10 hover:border-yellow-400/50 transition-colors duration-300"
+                        >
+                            <div className="flex items-center gap-4 mb-6">
+                                <FaMapMarkerAlt size={24} className="text-yellow-400" />
+                                <h2 className="text-2xl font-bold text-white">West Vancouver Campus</h2>
+                            </div>
+                            <div className="space-y-4 text-white/70">
+                                <p>Our main campus featuring:</p>
+                                <ul className="space-y-2">
+                                    <li className="flex items-start gap-3">
+                                        <span className="text-yellow-400 mt-1">•</span>
+                                        Modern computer labs with latest hardware
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <span className="text-yellow-400 mt-1">•</span>
+                                        Robotics and electronics workshop
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <span className="text-yellow-400 mt-1">•</span>
+                                        Collaborative learning spaces
+                                    </li>
+                                </ul>
+                            </div>
+                        </a>
+
+                        <a 
+                            href={coquitlamLocation}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="card border border-white/10 hover:border-yellow-400/50 transition-colors duration-300"
+                        >
+                            <div className="flex items-center gap-4 mb-6">
+                                <FaMapMarkerAlt size={24} className="text-yellow-400" />
+                                <h2 className="text-2xl font-bold text-white">Coquitlam Campus</h2>
+                            </div>
+                            <div className="space-y-4 text-white/70">
+                                <p>Our tech hub featuring:</p>
+                                <ul className="space-y-2">
+                                    <li className="flex items-start gap-3">
+                                        <span className="text-yellow-400 mt-1">•</span>
+                                        Advanced programming facilities
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <span className="text-yellow-400 mt-1">•</span>
+                                        Game development studio
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <span className="text-yellow-400 mt-1">•</span>
+                                        Project presentation space
+                                    </li>
+                                </ul>
+                            </div>
+                        </a>
                     </div>
-                    <div className="py-2">
-                        <img src={gallery7} alt="gallery" className="image w-[250px] px-2 cursor-pointer" />
-                    </div>
-                    <div className="py-2">
-                        <img src={gallery8} alt="gallery" className="image w-[250px] px-2 cursor-pointer" />
-                    </div>
-                    <div className="py-2">
-                        <img src={gallery9} alt="gallery" className="image w-[250px] px-2 cursor-pointer" />
-                    </div>
-                    <div className="py-2">
-                        <img src={gallery10} alt="gallery" className="image w-[250px] px-2 cursor-pointer" />
-                    </div>
-                    <div className="py-2">
-                        <img src={gallery11} alt="gallery" className="image w-[250px] px-2 cursor-pointer" />
-                    </div>
-                    <div className="py-2">
-                        <img src={gallery12} alt="gallery" className="image w-[250px] px-2 cursor-pointer" />
-                    </div>
-                    <div className="py-2">
-                        <img src={gallery13} alt="gallery" className="image w-[250px] px-2 cursor-pointer" />
-                    </div>
-                    <div className="py-2">
-                        <img src={gallery14} alt="gallery" className="image w-[250px] px-2 cursor-pointer" />
-                    </div>
-                    <div className="py-2">
-                        <img src={gallery15} alt="gallery" className="image w-[250px] px-2 cursor-pointer" />
-                    </div>
-                    <div className="py-2">
-                        <img src={gallery16} alt="gallery" className="image w-[250px] px-2 cursor-pointer" />
-                    </div>
-                    <div className="py-2">
-                        <img src={gallery17} alt="gallery" className="image w-[250px] px-2 cursor-pointer" />
-                    </div>
-                    <div className="py-2">
-                        <img src={gallery18} alt="gallery" className="image w-[250px] px-2 cursor-pointer" />
-                    </div>
-                    <div className="py-2">
-                        <img src={gallery19} alt="gallery" className="image w-[250px] px-2 cursor-pointer" />
-                    </div>
-                    <div className="py-2">
-                        <img src={gallery20} alt="gallery" className="image w-[250px] px-2 cursor-pointer" />
-                    </div>
-                    <div className="py-2">
-                        <img src={gallery24} alt="gallery" className="image w-[250px] px-2 cursor-pointer" />
-                    </div>
-                    <div className="py-2">
-                        <img src={gallery25} alt="gallery" className="image w-[250px] px-2 cursor-pointer" />
-                    </div>
-                    <div className="py-2">
-                        <img src={gallery26} alt="gallery" className="image w-[250px] px-2 cursor-pointer" />
-                    </div>
-                    <div className="py-2">
-                        <img src={gallery27} alt="gallery" className="image w-[250px] px-2 cursor-pointer" />
-                    </div>
-                    <div className="py-2">
-                        <img src={gallery28} alt="gallery" className="image w-[250px] px-2 cursor-pointer" />
-                    </div>
-                    <div className="py-2">
-                        <img src={gallery29} alt="gallery" className="image w-[250px] px-2 cursor-pointer" />
-                    </div>
-                    <div className="py-2">
-                        <img src={gallery30} alt="gallery" className="image w-[250px] px-2 cursor-pointer" />
-                    </div>
-                    <div className="py-2">
-                        <img src={gallery31} alt="gallery" className="image w-[250px] px-2 cursor-pointer" />
-                    </div>
-                    <div className="py-2">
-                        <img src={gallery32} alt="gallery" className="image w-[250px] px-2 cursor-pointer" />
-                    </div>
-                    <div className="py-2">
-                        <img src={gallery33} alt="gallery" className="image w-[250px] px-2 cursor-pointer" />
-                    </div>
-                </section>
-            </div>
+                </div>
+            </section>
         </main>
-    )
+    );
 }
